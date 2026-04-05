@@ -16,3 +16,10 @@
   `archive_02_sarima_solution.ipynb`.
 - В `05_catboost.ipynb` базовый набор численных признаков очищен от `sales_sum`;
   добавлено разделение между безопасными submission-признаками и optional research features.
+
+- Репозиторий переведен на схему `data/raw -> artifacts/* -> notebooks/*` для полной воспроизводимости.
+- Из `project/data` убрана зависимость от общего симлинка на корневой `data/`; вместо этого созданы только raw-ссылки.
+- Все ноутбуки переведены на единые пути к `artifacts/` и очищены от старых save-path в `data/experiment_info`.
+- В ноутбуках обновлены markdown-заголовки и вступительные блоки: теперь каждый ноутбук явно фиксирует, что читает, что сохраняет и какое место занимает в пайплайне.
+- В `04_tabular_baselines.ipynb` добавлен recursive evaluation и шаблон полного submission для нетяжелых моделей.
+- В `05_catboost.ipynb` сохранен proxy-tuning через Optuna, но финальная отчетная оценка явно отделена как recursive CV.
